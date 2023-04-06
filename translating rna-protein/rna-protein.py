@@ -26,9 +26,13 @@ def get_rna(infile):
             codons.append(rna[i: i +3])
         for k in codons:
             proteins = rna_protein[k]
-            protein.append(proteins)
+            if proteins == "Stop":
+                continue
+            else:
+                protein.append(proteins)
         protein = "".join(protein)
         print(protein)
+
 #remove the stop or start codon from proteins
 
 
