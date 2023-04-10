@@ -1,3 +1,6 @@
+#get key, values of rna_protein
+#assign values of rna_protein as a key in to  new dictionary:
+#each keys of new dictionary should countain every represented codons
 
 rna_protein = {"UUU": "F",     "CUU": "L",      "AUU": "I",    "GUU": "V",
                 "UUC": "F",      "CUC": "L",      "AUC": "I",     "GUC": "V",
@@ -16,20 +19,63 @@ rna_protein = {"UUU": "F",     "CUU": "L",      "AUU": "I",    "GUU": "V",
                 "UGA": "Stop",   "CGA": "R",      "AGA": "R",      "GGA": "G",
                 "UGG": "W",      "CGG": "R",      "AGG": "R",      "GGG": "G"}
 
-def get_rna(infile):
-    with open(infile) as rna:
-        rna = rna.read()
-        rna = rna.strip()
-        codons = []
-        protein = []
-        for i in range(0, len(rna), 3):
-            codons.append(rna[i: i +3])
-        for k in codons:
-            proteins = rna_protein[k]
-            if proteins == "Stop":
-                continue
-            else:
-                protein.append(proteins)
-        protein = "".join(protein)
-        print(protein)
-get_rna("test.txt")
+
+proteins_dict = [x for x in rna_protein.values()]
+
+proteins = []
+
+for i in proteins_dict:
+    if i not in proteins:
+        proteins.append(i)
+
+# for x,y in rna_protein.items():
+#     new_dict = {}
+#     for p in proteins:
+#         if y == p:
+#             new_dict[p] = rna_protein[x]
+#     print(new_dict)
+
+for x,y in rna_protein.items():
+    for i in y:
+        print(i)
+
+
+
+
+
+
+        #new_dict[p]=[x for x in rna_protein()]
+    #print(new_dict)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
